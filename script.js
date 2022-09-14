@@ -48,9 +48,10 @@ const typeController = (e) => {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
-    getErr.push(newLetter);
+    getErr.push(newLetter); // here i get and push the all error data to an array 
   }
-  errorCount = getErr.length;
+  errorCount = getErr.length; // and show how many error made 
+
   // check if given question text is equal to user typed text
   if (questionText === userText) {
     gameOver();
