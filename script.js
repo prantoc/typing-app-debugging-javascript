@@ -101,7 +101,7 @@ const gameOver = () => {
 const closeModal = () => {
   modalBackground.classList.toggle("hidden");
   resultModal.classList.toggle("hidden");
-  window.location.reload();
+  // window.location.reload();
 };
 
 const start = () => {
@@ -110,7 +110,7 @@ const start = () => {
 
   let count = 3;
   countdownOverlay.style.display = "flex";
-
+  countdownOverlay.innerText = ``;
   const startCountdown = setInterval(() => {
     countdownOverlay.innerHTML = `<h1>${count}</h1>`;
 
