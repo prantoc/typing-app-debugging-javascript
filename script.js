@@ -10,6 +10,7 @@ let userText = "";
 let errorCount = 0;
 let startTime;
 let questionText = "";
+let getErr = [];
 
 // Load and display question
 fetch("./texts.json")
@@ -18,7 +19,7 @@ fetch("./texts.json")
     questionText = data[Math.floor(Math.random() * data.length)];
     question.innerHTML = questionText;
   });
-let getErr = [];
+
 
 // checks the user typed character and displays accordingly
 const typeController = (e) => {
@@ -99,6 +100,7 @@ const gameOver = () => {
 const closeModal = () => {
   modalBackground.classList.toggle("hidden");
   resultModal.classList.toggle("hidden");
+  window.location.reload();
 };
 
 const start = () => {
