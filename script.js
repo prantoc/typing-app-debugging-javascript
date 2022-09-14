@@ -18,6 +18,7 @@ fetch("./texts.json")
     questionText = data[Math.floor(Math.random() * data.length)];
     question.innerHTML = questionText;
   });
+let getErr = [];
 
 // checks the user typed character and displays accordingly
 const typeController = (e) => {
@@ -46,8 +47,9 @@ const typeController = (e) => {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
+    getErr.push(newLetter);
   }
-
+  errorCount = getErr.length;
   // check if given question text is equal to user typed text
   if (questionText === userText) {
     gameOver();
